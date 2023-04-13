@@ -80,6 +80,11 @@ class RayTracer(nn.Module):
 
         real_mask = convergent_mask.clone()
         real_points = curr_start_points.clone()
+
+        if self.test_mode and floor_dist is not None:  # Remove floaters under the floor when visualizing novel views
+            floor_points = ray_o + ray_d * floor_dist
+            convergent_mask &= real_points[..., 2] > floor_points[..., 2] - 0.03
+
         if self.mock_floor and floor_dist is not None:  # mock non-convergent rays
             floor_points = ray_o + ray_d * floor_dist
             background_mask = ~convergent_mask
@@ -87,10 +92,6 @@ class RayTracer(nn.Module):
             curr_start_points[background_mask] = floor_points[background_mask]
             curr_start_sdf[background_mask] = 0
             acc_start_dis[background_mask] = floor_dist[background_mask, 0]
-
-        if self.test_mode and floor_dist is not None:  # Remove floaters under the floor when visualizing novel views
-            floor_points = ray_o + ray_d * floor_dist
-            convergent_mask &= real_points[..., 2] > floor_points[..., 2] - 0.03
 
         ret_dict = {
             "convergent_mask": convergent_mask,
