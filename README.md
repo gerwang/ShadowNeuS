@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 Here we show how to test our code on an example scene. Before testing, you need to
 
-- Download the [example data](https://drive.google.com/file/d/1JD-O-VKkWz9_lBerEhqf3_ome34bijc_/view?usp=sharing) and unzip it to it to `./public_data/nerf_synthetic`.
+- Download the [example data](https://drive.google.com/file/d/1JD-O-VKkWz9_lBerEhqf3_ome34bijc_/view?usp=sharing) and unzip it to `./public_data/nerf_synthetic`.
 
 - Download the pretrained checkpoint of `lego_specular_point` [here](https://drive.google.com/file/d/1zt3h0Jl3cb5v5T-Wv5GJjtSo6wA5JtEJ/view?usp=sharing) and unzip it to `./exp`.
 
@@ -38,7 +38,7 @@ See the results at `./exp/lego_specular_point/point_color/novel_view/validations
 python exp_runner.py --mode validate_mesh --conf confs/point_color.conf --case lego_specular_point --is_continue --data_sub 1 --test_mode
 ```
 
-See the results at ` ./exp/lego_specular_point/point_color/meshes/00150000.ply`.
+See the results at `./exp/lego_specular_point/point_color/meshes/00150000.ply`.
 
 #### Relighting
 
@@ -64,7 +64,7 @@ The `--mode` option can be ` validate_relight_<img_idx>_<light>_<material>`, whe
 python exp_runner.py --mode validate_normal_depth --conf confs/point_color.conf --case lego_specular_point --is_continue --data_sub 1 --test_mode
 ```
 
-See the results at ` ./exp/lego_specular_point/point_color/quantitative_compare/`.
+See the results at `./exp/lego_specular_point/point_color/quantitative_compare/`.
 
 #### Environment relighting
 
