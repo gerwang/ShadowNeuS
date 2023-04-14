@@ -85,6 +85,13 @@ python env_relight.py --work_path ./exp/lego_specular_point/point_color/ --env_p
 
 See the results at `./exp/lego_specular_point/point_color/super_workshop`, `super_chapel`, `super_night`, and `super_park`. The above command is tested on four RTX 3090 GPUs.
 
+Output:
+
+
+https://user-images.githubusercontent.com/25758401/231927850-cd4ace70-b034-4aed-b1b4-8140c1338bec.mp4
+
+
+
 ### Training
 
 You can download training data from [here](https://drive.google.com/drive/folders/1Sr30kdvCD2tXNAONzcnF5xnoMXasylyA?usp=sharing).
