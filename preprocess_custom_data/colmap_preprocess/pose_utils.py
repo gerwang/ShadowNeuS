@@ -247,7 +247,6 @@ def gen_poses(basedir, match_type, factors=None):
         files_had = os.listdir(os.path.join(basedir, 'sparse/0'))
     else:
         files_had = []
-    print(os.path.join(basedir, 'sparse/0'), files_had) # fixme
     if not all([f in files_had for f in files_needed]):
         print('Need to run COLMAP')
         run_colmap(basedir, match_type)
