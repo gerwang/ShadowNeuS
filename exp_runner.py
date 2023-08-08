@@ -123,6 +123,8 @@ class Runner:
         params_to_train += list(self.sdf_network.parameters())
         params_to_train += list(self.deviation_network.parameters())
         params_to_train += list(self.albedo_network.parameters())
+        if self.specular_network is not None:
+            params_to_train += list(self.specular_network.parameters())
         if self.sg_basis is not None:
             params_to_train += list(self.sg_basis.parameters())
         self.optimizer = torch.optim.Adam(params_to_train, lr=self.learning_rate)
